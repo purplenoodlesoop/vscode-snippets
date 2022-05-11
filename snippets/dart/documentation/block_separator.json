@@ -1,0 +1,9 @@
+{
+    "prefix": "spr",
+    "description": "Comment block separator",
+    "body": [
+        "// --- ${1} --- //",
+        "",
+        "$0"
+    ]
+}

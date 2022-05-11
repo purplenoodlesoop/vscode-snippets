@@ -1,0 +1,9 @@
+{
+    "prefix": "part",
+    "description": "Inserts a part statement for generated code.",
+    "body": [
+        "part '${TM_FILENAME_BASE}.$1.dart';",
+        "",
+        "$0"
+    ]
+}

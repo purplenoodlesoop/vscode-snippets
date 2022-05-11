@@ -1,0 +1,13 @@
+{
+    "prefix": "try",
+    "description": "Try-catch-finally block",
+    "body": [
+        "try {",
+        "  $1",
+        "} on Object catch (e, s) {",
+        "  $2",
+        "} finally {",
+        "  $0",
+        "}"
+    ]
+}

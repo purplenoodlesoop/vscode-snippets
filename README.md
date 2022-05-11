@@ -1,1 +1,1 @@
-# SNIPPETS AND TEMPLATES
+# Visual Studio Code Dart/Flutter snippets

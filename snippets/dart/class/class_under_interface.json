@@ -1,0 +1,11 @@
+{
+    "prefix": "clsinter",
+    "description": "Creates and interface and a default implementation for it.",
+    "body": [
+        "abstract class I$1 {}",
+        "",
+        "class $1 implements I$1 {",
+        "  $0",
+        "}"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "prefix": "chngen",
+    "description": "Creates a Changelog entry",
+    "body": [
+        "## [$1.$2.$3] – $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+        "### Added",
+        "- $4",
+        "",
+        "### Changed",
+        "- $5",
+        "",
+        "### Deprecated",
+        "- $6",
+        "",
+        "### Removed",
+        "- $7",
+        "",
+        "### Fixed",
+        "- $8",
+        "",
+        "### Security",
+        "- $0"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "prefix": "cfge",
+    "description": "Creates a static constant config mixin entry.",
+    "body": [
+        "static const $1 $2 = $3;",
+        "$0"
+    ]
+}

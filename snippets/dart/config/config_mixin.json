@@ -1,0 +1,10 @@
+{
+    "prefix": "cfg",
+    "description": "Private config mixin used for configuration.",
+    "body": [
+        "mixin ${1:_Config} {",
+        "  static const $2 $3 = $4",
+        "  $0",
+        "}"
+    ]
+}

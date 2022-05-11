@@ -1,0 +1,17 @@
+{
+    "prefix": "retro",
+    "description": "Creates a retrofit client.",
+    "body": [
+        "import 'package:dio/dio.dart';",
+        "import 'package:retrofit/retrofit.dart';",
+        "",
+        "part '$TM_FILENAME_BASE.g.dart';",
+        "",
+        "@RestApi(baseUrl: \"$1\")",
+        "abstract class $2Client {",
+        "  factory $2Client(Dio dio, {String? baseUrl}) = _$2Client;",
+        "",
+        "  $0",
+        "}"
+    ]
+}

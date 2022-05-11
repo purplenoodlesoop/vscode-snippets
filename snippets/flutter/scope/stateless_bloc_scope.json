@@ -1,0 +1,21 @@
+{
+    "prefix": "blscope",
+    "description": "Creates a stateless scope for BLoC that uses BlocProvider as its InheritedWidget.",
+    "body": [
+        "class $1Scope extends StatelessWidget {",
+        "  final Widget child;",
+        "",
+        "  const $1Scope({Key? key, required this.child,}) : super(key: key);",
+        "",
+        "  static const BlocScope<$1Event, $1State, $1Bloc> _scope = BlocScope();",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) => BlocProvider<$1Bloc>(",
+        "        create: (context) => $1Bloc(",
+        "          $2Repository: context.repository.$2,",
+        "        ),",
+        "        child: child,",
+        "      );",
+        "}"
+    ]
+}

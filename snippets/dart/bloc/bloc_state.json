@@ -1,0 +1,8 @@
+{
+    "prefix": "blst",
+    "description": "Creates a Freezed bloc state.",
+    "body": [
+        "const factory $1State.$2($3) = $1State$2;",
+        "$0"
+    ]
+}

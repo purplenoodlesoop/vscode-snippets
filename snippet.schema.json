@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "additionalProperties": false,
+    "properties": {
+      "prefix": { "$ref": "#/definitions/string-or-array" },
+      "description": { "type": "string" },
+      "body": { "$ref": "#/definitions/string-or-array" }
+    },
+    "required": [
+      "prefix",
+      "description",
+      "body"
+    ],
+    "definitions": {
+     "string-or-array": {
+        "type": ["array", "string"],
+        "items": { "type": "string" }
+      }
+    }
+}

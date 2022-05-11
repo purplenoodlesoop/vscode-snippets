@@ -1,0 +1,33 @@
+{
+    "prefix": "bloc",
+    "description": "Creates a scaffold for a StreamBloc that contains states, events, and the BLoC itself.",
+    "body": [
+        "import 'package:freezed_annotation/freezed_annotation.dart';",
+        "import 'package:stream_bloc/stream_bloc.dart';",
+        "",
+        "part '$TM_FILENAME_BASE.freezed.dart';",
+        "",
+        "// --- States --- //",
+        "",
+        "@freezed",
+        "class $1State with _$$1State {",
+        "  $2",
+        "}",
+        "",
+        "// --- Events --- //",
+        "",
+        "@freezed",
+        "class $1Event with _$$1Event {",
+        "  $3",
+        "}",
+        "",
+        "// --- BLoC --- //",
+        "",
+        "class $1Bloc extends StreamBloc<$1Event, $1State> {",
+        " $1Bloc() : super($4);",
+        "",
+        "  @override",
+        "  Stream<$1State> mapEventToStates($1Event event) => event$0;",
+        "}"
+    ]
+}

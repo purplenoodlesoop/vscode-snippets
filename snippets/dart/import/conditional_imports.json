@@ -1,0 +1,9 @@
+{
+    "prefix": "cond",
+    "description": "Platform-aware conditional imports.",
+    "body": [
+        "import '$1/$2_stub.dart'",
+        "    if (dart.library.html) '$1/$2_web.dart'",
+        "    if (dart.library.io) '$1/$2_io.dart';\n"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "prefix": "inter",
+    "description": "Creates an interface.",
+    "body": [
+        "abstract class I$1 {}"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "prefix": "newtmpl",
+    "description": "Creates a new dartdoc template with current file's name as its prefix",
+    "body": [
+        "/// {@template $TM_FILENAME_BASE.${1}}",
+        "/// $2",
+        "/// {@endtemplate}",
+        "$0"
+    ]
+}

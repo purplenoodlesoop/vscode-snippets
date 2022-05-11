@@ -1,0 +1,5 @@
+{
+    "prefix": "usetmpl",
+    "description": "Uses existing dartdoc macro with current file's name as its prefix",
+    "body": "/// {@macro $TM_FILENAME_BASE.$0}"
+}

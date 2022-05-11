@@ -1,0 +1,9 @@
+{
+    "prefix": "tryon",
+    "description": "Try-catch on clause",
+    "body": [
+        "on $1 catch (e, s) {",
+        "  $0",
+        "}"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "prefix": "scope",
+    "description": "Creates a scope that inherits from the Scope Stateful+Inherited Widget wrapper.",
+    "body": [
+        "class $1Scope extends Scope {",
+        "",
+        "  const $1Scope({required Widget child, Key? key,}) : super(child: child, key: key);",
+        "",
+        "  static const DelegateAccess<_$1ScopeDelegate> _delegateOf = Scope.delegateOf<$1Scope, _$1ScopeDelegate>;",
+        "",
+        "  @override",
+        "  ScopeDelegate<$1Scope> createDelegate() => _$1ScopeDelegate();",
+        "",
+        "}",
+        "",
+        "class _$1ScopeDelegate extends ScopeDelegate<$1Scope> {",
+        "",
+        "  $0",
+        "",
+        "}"
+    ]
+}

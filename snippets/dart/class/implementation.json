@@ -1,0 +1,9 @@
+{
+    "prefix": "imp",
+    "description": "Creates a default implementation for an interface.",
+    "body": [
+        "class $1 implements I$1 {",
+        "  $0",
+        "}"
+    ]
+}

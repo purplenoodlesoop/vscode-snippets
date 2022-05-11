@@ -1,0 +1,9 @@
+{
+    "prefix": "base",
+    "description": "Creates a base class.",
+    "body": [
+        "class $1Base implements I$1 {",
+        "  $0",
+        "}"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "prefix": "bleh",
+    "description": "Creates a BLoC event handler that is used with destructured events.",
+    "body": [
+        "Stream<$1State> _$2($3) async* {",
+        "  $0",
+        "}"
+    ]
+}

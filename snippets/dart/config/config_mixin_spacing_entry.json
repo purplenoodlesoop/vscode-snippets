@@ -1,0 +1,8 @@
+{
+    "prefix": "cfgspace",
+    "description": "Creates a static configuration spacing mixin entry.",
+    "body": [
+        "static const double $1Spacing = $2;",
+        "$0"
+    ]
+}
