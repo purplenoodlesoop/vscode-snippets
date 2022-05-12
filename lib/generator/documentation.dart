@@ -42,7 +42,9 @@ extension on StringBuffer {
         writeln(json['description']);
         writeln();
         writeSection('####', 'Prefix');
-        writeln(json['prefix']);
+        write('`');
+        write(json['prefix']);
+        writeln('`');
         writeln();
         writeSection('####', 'Body');
         write('```');

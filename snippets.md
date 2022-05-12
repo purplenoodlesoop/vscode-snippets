@@ -41,7 +41,7 @@ Creates a base class.
 
 #### Prefix
 
-base
+`base`
 
 #### Body
 
@@ -56,7 +56,7 @@ Creates a Freezed bloc event.
 
 #### Prefix
 
-blev
+`blev`
 
 #### Body
 
@@ -70,7 +70,7 @@ Creates a BLoC event handler that is used with destructured events.
 
 #### Prefix
 
-bleh
+`bleh`
 
 #### Body
 
@@ -85,7 +85,7 @@ Creates a Freezed bloc state.
 
 #### Prefix
 
-blst
+`blst`
 
 #### Body
 
@@ -99,7 +99,7 @@ Comment block separator
 
 #### Prefix
 
-spr
+`spr`
 
 #### Body
 
@@ -114,7 +114,7 @@ Creates and interface and a default implementation for it.
 
 #### Prefix
 
-clsinter
+`clsinter`
 
 #### Body
 
@@ -131,7 +131,7 @@ Platform-aware conditional imports.
 
 #### Prefix
 
-cond
+`cond`
 
 #### Body
 
@@ -147,7 +147,7 @@ Private config mixin used for configuration.
 
 #### Prefix
 
-cfg
+`cfg`
 
 #### Body
 
@@ -163,7 +163,7 @@ Creates a static constant config mixin entry.
 
 #### Prefix
 
-cfge
+`cfge`
 
 #### Body
 
@@ -177,7 +177,7 @@ Creates a static configuration spacing mixin entry.
 
 #### Prefix
 
-cfgspace
+`cfgspace`
 
 #### Body
 
@@ -191,7 +191,7 @@ Creates a scaffold for a StreamBloc that contains states, events, and the BLoC i
 
 #### Prefix
 
-bloc
+`bloc`
 
 #### Body
 
@@ -230,7 +230,7 @@ Inserts a part statement for generated code.
 
 #### Prefix
 
-part
+`part`
 
 #### Body
 
@@ -245,7 +245,7 @@ Creates a default implementation for an interface.
 
 #### Prefix
 
-imp
+`imp`
 
 #### Body
 
@@ -260,7 +260,7 @@ Creates an interface.
 
 #### Prefix
 
-inter
+`inter`
 
 #### Body
 
@@ -273,7 +273,7 @@ Creates a new dartdoc template with current file's name as its prefix
 
 #### Prefix
 
-newtmpl
+`newtmpl`
 
 #### Body
 
@@ -289,7 +289,7 @@ Creates a retrofit client.
 
 #### Prefix
 
-retro
+`retro`
 
 #### Body
 
@@ -312,7 +312,7 @@ Try-catch-finally block
 
 #### Prefix
 
-try
+`try`
 
 #### Body
 
@@ -331,7 +331,7 @@ Try-catch on clause
 
 #### Prefix
 
-tryon
+`tryon`
 
 #### Body
 
@@ -346,7 +346,7 @@ Uses existing dartdoc macro with current file's name as its prefix
 
 #### Prefix
 
-usetmpl
+`usetmpl`
 
 #### Body
 
@@ -361,7 +361,7 @@ Creates a StatelessWidget that uses arrow instead of return.
 
 #### Prefix
 
-astl
+`astl`
 
 #### Body
 
@@ -382,7 +382,7 @@ Creates a StatelessWidget that takes a child and uses arrow instead of return.
 
 #### Prefix
 
-astlch
+`astlch`
 
 #### Body
 
@@ -404,7 +404,7 @@ Creates a scope that inherits from the Scope Stateful+Inherited Widget wrapper.
 
 #### Prefix
 
-scope
+`scope`
 
 #### Body
 
@@ -432,7 +432,7 @@ Creates a stateless scope for BLoC that uses BlocProvider as its InheritedWidget
 
 #### Prefix
 
-blscope
+`blscope`
 
 #### Body
 
@@ -459,7 +459,7 @@ Creates a regular StatelessWidget.
 
 #### Prefix
 
-stl
+`stl`
 
 #### Body
 
@@ -484,7 +484,7 @@ Creates an initial Changelog entry
 
 #### Prefix
 
-chngin
+`chngin`
 
 #### Body
 
@@ -505,7 +505,7 @@ Creates a Changelog entry
 
 #### Prefix
 
-chngen
+`chngen`
 
 #### Body
 
