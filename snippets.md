@@ -365,7 +365,7 @@ Creates a StatelessWidget that uses arrow instead of return.
 
 #### Body
 
-```flutter, dart
+```dart
 class $1 extends StatelessWidget {
   $2
 
@@ -386,7 +386,7 @@ Creates a StatelessWidget that takes a child and uses arrow instead of return.
 
 #### Body
 
-```flutter, dart
+```dart
 class $1 extends StatelessWidget {
   final Widget child;
   $2
@@ -408,7 +408,7 @@ Creates a scope that inherits from the Scope Stateful+Inherited Widget wrapper.
 
 #### Body
 
-```flutter, dart
+```dart
 class $1Scope extends Scope {
 
   const $1Scope({required Widget child, Key? key,}) : super(child: child, key: key);
@@ -436,7 +436,7 @@ Creates a stateless scope for BLoC that uses BlocProvider as its InheritedWidget
 
 #### Body
 
-```flutter, dart
+```dart
 class $1Scope extends StatelessWidget {
   final Widget child;
 
@@ -463,7 +463,7 @@ Creates a regular StatelessWidget.
 
 #### Body
 
-```flutter, dart
+```dart
 class $1 extends StatelessWidget {
   $2
 

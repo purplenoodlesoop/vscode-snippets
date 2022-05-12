@@ -57,7 +57,7 @@ extension on StringBuffer {
 }
 
 String _extractScope(Object? scope) {
-  if (scope == 'flutter') return 'dart';
+  if (scope == 'flutter, dart') return 'dart';
   return scope?.toString() ?? '';
 }
 
