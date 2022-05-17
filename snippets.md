@@ -28,6 +28,7 @@ This file is auto-generated
   - [Arrow stateless widget child](#arrow-stateless-widget-child)
   - [Auto route nested routes](#auto-route-nested-routes)
   - [Auto route route](#auto-route-route)
+  - [Auto router call](#auto-router-call)
   - [Inherited scope](#inherited-scope)
   - [Stateless bloc scope](#stateless-bloc-scope)
   - [Stateless widget](#stateless-widget)
@@ -435,6 +436,19 @@ AutoRoute(
   page: $2Page,
 ),
 $0
+```
+### Auto router call
+
+Locates nearest AutoRouter in the given context and calls an arbitrary navigation method on it.
+
+#### Prefix
+
+`ar`
+
+#### Body
+
+```dart
+AutoRouter.of(context).$0
 ```
 ### Inherited scope
 
