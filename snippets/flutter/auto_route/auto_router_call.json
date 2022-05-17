@@ -1,0 +1,7 @@
+{
+    "prefix": "ar",
+    "description": "Locates nearest AutoRouter in the given context and calls an arbitrary navigation method on it.",
+    "body": [
+        "AutoRouter.of(context).$0"
+    ]
+}

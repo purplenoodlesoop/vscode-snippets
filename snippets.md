@@ -26,6 +26,8 @@ This file is auto-generated
 - [Flutter](#flutter)
   - [Arrow stateless widget](#arrow-stateless-widget)
   - [Arrow stateless widget child](#arrow-stateless-widget-child)
+  - [Auto route nested routes](#auto-route-nested-routes)
+  - [Auto route route](#auto-route-route)
   - [Inherited scope](#inherited-scope)
   - [Stateless bloc scope](#stateless-bloc-scope)
   - [Stateless widget](#stateless-widget)
@@ -397,6 +399,42 @@ class $1 extends StatelessWidget {
   Widget build(BuildContext context) => $0;
 }
 
+```
+### Auto route nested routes
+
+Creates an entry point for a group of nested Auto Route routes with a void return types.
+
+#### Prefix
+
+`arts`
+
+#### Body
+
+```dart
+const AutoRoute<void> $1Routes = AutoRoute(
+  path: '/${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/downcase}${2:+-}${3:/downcase}${4:/downcase}/g}',
+  page: ${1/(.)(.*)/${1:/upcase}${2:/camelcase}/}RootPage,
+  children: <AutoRoute<void>>[
+    $0
+  ],
+);
+```
+### Auto route route
+
+Creates an Auto Routes route entry with a void return type.
+
+#### Prefix
+
+`art`
+
+#### Body
+
+```dart
+AutoRoute(
+  path: '/$1',
+  page: $2Page,
+),
+$0
 ```
 ### Inherited scope
 
