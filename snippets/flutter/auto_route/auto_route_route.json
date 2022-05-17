@@ -1,0 +1,11 @@
+{
+    "prefix": "art",
+    "description": "Creates an Auto Routes route entry with a void return type.",
+    "body": [
+        "AutoRoute(",
+        "  path: '/$1',",
+        "  page: $2Page,",
+        "),",
+        "$0"
+    ]
+}

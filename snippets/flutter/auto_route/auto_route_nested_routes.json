@@ -1,0 +1,13 @@
+{
+    "prefix": "arts",
+    "description": "Creates an entry point for a group of nested Auto Route routes with a void return types.",
+    "body": [
+        "const AutoRoute<void> $1Routes = AutoRoute(",
+        "  path: '/${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/downcase}${2:+-}${3:/downcase}${4:/downcase}/g}',",
+        "  page: ${1/(.)(.*)/${1:/upcase}${2:/camelcase}/}RootPage,",
+        "  children: <AutoRoute<void>>[",
+        "    $0",
+        "  ],",
+        ");"
+    ]
+}
