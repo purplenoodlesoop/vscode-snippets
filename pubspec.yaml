@@ -1,3 +1,4 @@
+publish_to: none
 name: snippet_generator
 description: Visual Studio Code snippets/documentation generator.
 version: 0.1.0
@@ -11,6 +12,11 @@ dependencies:
   pure: ^0.2.0
   freezed_annotation: ^2.1.0
   json_annotation: ^4.7.0
+  md:
+    git:
+      url: git@github.com:purplenoodlesoop/parsing-and-rendering.git
+      path: packages/md
+  fast_immutable_collections: ^7.4.2
 
 
 dev_dependencies:
