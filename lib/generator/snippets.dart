@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:pure/pure.dart';
+import 'package:snippet_generator/shared/json.dart';
 import 'package:snippet_generator/shared/snippet_info.dart';
 
 File get _snippetsFile => File('global.code-snippets');
@@ -11,7 +12,7 @@ Future<void> _writeResult(Json result) =>
 
 Json _appendSnippet(Json result, SnippetInfo info) => {
       ...result,
-      info.name: info.json,
+      info.snippetName: info.toSnippetJson(),
     };
 
 Future<void> generator(Stream<SnippetInfo> snippets) =>

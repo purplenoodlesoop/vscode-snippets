@@ -1,5 +1,8 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:pure/pure.dart';
+import 'package:snippet_generator/shared/json.dart';
+import 'package:snippet_generator/shared/snippet_data.dart';
 import 'package:snippet_generator/shared/snippet_info.dart';
 import 'package:stream_transform/stream_transform.dart';
 
@@ -11,11 +14,17 @@ extension on File {
   String get name => uri.pathSegments.last;
 }
 
-Future<SnippetInfo> _extractInfo(String scope, File file) async => SnippetInfo(
-      scope: scope,
-      filename: file.name,
-      contents: await file.readAsString(),
-    );
+Future<SnippetInfo> _extractInfo(String scope, File file) async {
+  final fileContents = await file.readAsString();
+
+  return SnippetInfo(
+    scope: scope,
+    fileName: file.name,
+    data: SnippetData.fromJson(
+      jsonDecode(fileContents) as Json,
+    ),
+  );
+}
 
 bool _isJson(File file) => file.path.endsWith('.json');
 

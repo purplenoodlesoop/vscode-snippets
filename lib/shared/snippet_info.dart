@@ -1,36 +1,30 @@
-import 'dart:convert';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:snippet_generator/shared/json.dart';
+import 'package:snippet_generator/shared/snippet_data.dart';
+
+part 'snippet_info.freezed.dart';
 
 extension on String {
   String uppercased() => this[0].toUpperCase() + substring(1);
-
-  String followedBy(String other) => this + other;
 }
 
-typedef Json = Map<String, Object?>;
+@freezed
+class SnippetInfo with _$SnippetInfo {
+  const factory SnippetInfo({
+    required String scope,
+    required String fileName,
+    required SnippetData data,
+  }) = _SnippetInfo;
 
-class SnippetInfo {
-  final String scope;
-  final String filename;
-  final String contents;
+  const SnippetInfo._();
 
-  const SnippetInfo({
-    required this.scope,
-    required this.filename,
-    required this.contents,
-  });
+  String get scopeName => scope.uppercased();
 
-  String get uppercasedScope => scope.uppercased();
+  String get snippetName =>
+      fileName.split('.').first.replaceAll('_', ' ').uppercased();
 
-  String get name => filename
-      .split('.')
-      .first
-      .split('_')
-      .join(' ')
-      .uppercased()
-      .followedBy(' ($uppercasedScope)');
-
-  Json get json {
-    final json = jsonDecode(contents) as Json;
+  Json toSnippetJson() {
+    final json = data.toJson();
 
     if (scope.isEmpty || scope == 'global') return json;
 
