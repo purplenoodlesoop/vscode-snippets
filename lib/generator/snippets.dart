@@ -12,7 +12,7 @@ Future<void> _writeResult(Json result) =>
 
 Json _appendSnippet(Json result, SnippetInfo info) => {
       ...result,
-      info.snippetName: info.toSnippetJson(),
+      '${info.snippetName} (${info.scopeName})': info.toSnippetJson(),
     };
 
 Future<void> generator(Stream<SnippetInfo> snippets) =>
