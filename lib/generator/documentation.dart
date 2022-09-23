@@ -1,112 +1,117 @@
-import 'dart:collection';
 import 'dart:io';
 
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
+import 'package:md/md.dart';
 import 'package:pure/pure.dart';
 import 'package:snippet_generator/shared/snippet_info.dart';
 
-typedef _Data = Map<String, List<SnippetInfo>>;
+/// Scope: Snippets
+typedef _Snippets = IMap<String, IList<SnippetInfo>>;
 
-extension on StringBuffer {
-  void writeLink(String name) {
-    write('- [');
-    write(name);
-    write('](#');
-    write(name.toLowerCase().split(' ').join('-'));
-    writeln(')');
-  }
+Markdown _snippetEntry(SnippetInfo snippet) {
+  final data = snippet.data;
+  final scope = snippet.scope;
 
-  void writeIndex(_Data data) {
-    for (final entry in data.entries) {
-      writeLink(entry.key);
-      for (final snippet in entry.value) {
-        write('  ');
-        writeLink(snippet.name.removeScope());
-      }
-    }
-    writeln();
-  }
-
-  void writeSection(String prefix, String name) {
-    write(prefix);
-    write(' ');
-    writeln(name);
-    writeln();
-  }
-
-  void writeContents(_Data data) {
-    for (final entry in data.entries) {
-      writeSection('##', entry.key);
-      for (final snippet in entry.value) {
-        final json = snippet.json;
-        writeSection('###', snippet.name.removeScope());
-        writeln(json['description']);
-        writeln();
-        writeSection('####', 'Prefix');
-        write('`');
-        write(json['prefix']);
-        writeln('`');
-        writeln();
-        writeSection('####', 'Body');
-        write('```');
-        writeln(_extractScope(json['scope']));
-        writeln(_extractBody(json['body']));
-        writeln('```');
-      }
-    }
-  }
+  return Markdown.section(
+    header: snippet.snippetName,
+    children: [
+      Markdown.text(data: data.description),
+      const Markdown.text(data: ''),
+      Markdown.section(
+        header: 'Prefix',
+        children: [
+          Markdown.text(
+            data: data.prefix,
+            style: TextStyle.code,
+          ),
+        ],
+      ),
+      Markdown.section(
+        header: 'Body',
+        children: [
+          Markdown.code(
+            language: scope == 'flutter' ? 'dart' : scope,
+            data: data.body,
+          )
+        ],
+      ),
+    ],
+  );
 }
 
-String _extractScope(Object? scope) {
-  if (scope == 'flutter, dart') return 'dart';
-  return scope?.toString() ?? '';
+Markdown _indexSnippetEntry(SnippetInfo snippet) {
+  final name = snippet.snippetName;
+  final link = name.toLowerCase().replaceAll(' ', '-');
+
+  return Markdown.link(
+    label: name,
+    destination: '#$link',
+  );
 }
 
-String? _extractBody(Object? body) {
-  if (body is String) return body;
-  if (body is List<dynamic>) return body.cast<String>().join('\n');
-  return null;
+Markdown _scopedIndexEntry(MapEntry<String, IList<SnippetInfo>> entry) {
+  final scope = entry.key;
+  final link = scope.toLowerCase();
+
+  return Markdown.list(
+    style: ListStyle.unordered,
+    children: [
+      Markdown.link(label: scope, destination: '#$link'),
+      Markdown.list(
+        style: ListStyle.unordered,
+        children: entry.value.map(_indexSnippetEntry).toList(),
+      ),
+    ],
+  );
 }
 
-extension on String {
-  String removeScope() =>
-      split(' ').where((element) => !element.contains('(')).join(' ');
+Markdown _index(_Snippets snippets) => Markdown.section(
+      header: 'Index',
+      children: snippets.entries.map(_scopedIndexEntry).toList(),
+    );
+
+List<Markdown> _snippets(_Snippets snippets) => snippets.entries
+    .map(
+      (entry) => Markdown.section(
+        header: entry.key,
+        children: entry.value.map(_snippetEntry).toList(),
+      ),
+    )
+    .toList();
+
+Markdown _documentation(_Snippets snippets) => Markdown.section(
+      header: 'Snippets description',
+      children: [
+        const Markdown.text(data: 'This file is auto-generated'),
+        const Markdown.text(data: ''),
+        _index(snippets),
+        ..._snippets(snippets),
+      ],
+    );
+
+_Snippets _categorizeSnippet(_Snippets snippets, SnippetInfo snippet) {
+  final scopeName = snippet.scopeName;
+
+  return IMap({
+    ...snippets.unlock,
+    scopeName: IList([
+      ...?snippets[scopeName],
+      snippet,
+    ])
+  });
 }
 
-_Data _categorizeSnippets(List<SnippetInfo> snippets) {
-  final sortedContent = List.of(snippets)
-    ..sort((a, b) => a.name.compareTo(b.name))
-    ..sort((a, b) => a.scope.compareTo(b.scope));
+File get _file => File('snippets.md');
 
-  final indexData = <String, List<SnippetInfo>>{};
+Future<void> generator(Stream<SnippetInfo> snippets) async {
+  final snippetsList = await snippets.toList();
 
-  for (final snippet in sortedContent) {
-    indexData
-        .putIfAbsent(snippet.uppercasedScope.removeScope(), () => [])
-        .add(snippet);
-  }
-
-  return UnmodifiableMapView(indexData);
+  return snippetsList
+      .toIList()
+      .sort((a, b) => a.snippetName.compareTo(b.snippetName))
+      .sort((a, b) => a.scope.compareTo(b.scope))
+      .fold<_Snippets>(IMap(), _categorizeSnippet)
+      .pipe(_documentation)
+      .pipe(renderNode)
+      .pipe(_file.writeAsString);
 }
-
-String _contentToMarkdown(List<SnippetInfo> snippets) {
-  final buffer = StringBuffer()
-    ..writeln('# Snippets description')
-    ..writeln()
-    ..writeln('This file is auto-generated')
-    ..writeln()
-    ..writeln('## Index');
-
-  [
-    buffer.writeIndex,
-    buffer.writeContents,
-  ].forEach(_categorizeSnippets(snippets).pipe);
-
-  return buffer.toString();
-}
-
-File get _documentationFile => File('snippets.md');
-
-Future<void> generator(Stream<SnippetInfo> snippets) => snippets
-    .toList()
-    .then(_contentToMarkdown)
-    .then(_documentationFile.writeAsString);

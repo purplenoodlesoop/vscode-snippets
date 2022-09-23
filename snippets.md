@@ -3,38 +3,39 @@
 This file is auto-generated
 
 ## Index
+
 - [Dart](#dart)
-  - [Base class](#base-class)
-  - [Bloc event](#bloc-event)
-  - [Bloc event handler](#bloc-event-handler)
-  - [Bloc state](#bloc-state)
-  - [Block separator](#block-separator)
-  - [Class under interface](#class-under-interface)
-  - [Conditional imports](#conditional-imports)
-  - [Config mixin](#config-mixin)
-  - [Config mixin entry](#config-mixin-entry)
-  - [Config mixin spacing entry](#config-mixin-spacing-entry)
-  - [Default bloc](#default-bloc)
-  - [Generated part](#generated-part)
-  - [Implementation](#implementation)
-  - [Interface](#interface)
-  - [New dartdoc template](#new-dartdoc-template)
-  - [Retrofit client](#retrofit-client)
-  - [Try catch finally](#try-catch-finally)
-  - [Try catch on](#try-catch-on)
-  - [Use dartdoc template](#use-dartdoc-template)
+	- [Base class](#base-class)
+	- [Bloc event](#bloc-event)
+	- [Bloc event handler](#bloc-event-handler)
+	- [Bloc state](#bloc-state)
+	- [Block separator](#block-separator)
+	- [Class under interface](#class-under-interface)
+	- [Conditional imports](#conditional-imports)
+	- [Config mixin](#config-mixin)
+	- [Config mixin entry](#config-mixin-entry)
+	- [Config mixin spacing entry](#config-mixin-spacing-entry)
+	- [Default bloc](#default-bloc)
+	- [Generated part](#generated-part)
+	- [Implementation](#implementation)
+	- [Interface](#interface)
+	- [New dartdoc template](#new-dartdoc-template)
+	- [Retrofit client](#retrofit-client)
+	- [Try catch finally](#try-catch-finally)
+	- [Try catch on](#try-catch-on)
+	- [Use dartdoc template](#use-dartdoc-template)
 - [Flutter](#flutter)
-  - [Arrow stateless widget](#arrow-stateless-widget)
-  - [Arrow stateless widget child](#arrow-stateless-widget-child)
-  - [Auto route nested routes](#auto-route-nested-routes)
-  - [Auto route route](#auto-route-route)
-  - [Auto router call](#auto-router-call)
-  - [Inherited scope](#inherited-scope)
-  - [Stateless bloc scope](#stateless-bloc-scope)
-  - [Stateless widget](#stateless-widget)
+	- [Arrow stateless widget](#arrow-stateless-widget)
+	- [Arrow stateless widget child](#arrow-stateless-widget-child)
+	- [Auto route nested routes](#auto-route-nested-routes)
+	- [Auto route route](#auto-route-route)
+	- [Auto router call](#auto-router-call)
+	- [Inherited scope](#inherited-scope)
+	- [Stateless bloc scope](#stateless-bloc-scope)
+	- [Stateless widget](#stateless-widget)
 - [Markdown](#markdown)
-  - [Initial changelog entry](#initial-changelog-entry)
-  - [New changelog entry](#new-changelog-entry)
+	- [Initial changelog entry](#initial-changelog-entry)
+	- [New changelog entry](#new-changelog-entry)
 
 ## Dart
 
@@ -53,6 +54,7 @@ class $1Base implements I$1 {
   $0
 }
 ```
+
 ### Bloc event
 
 Creates a Freezed bloc event.
@@ -67,6 +69,7 @@ Creates a Freezed bloc event.
 const factory $1Event.$2($3) = _$1Event$2;
 $0
 ```
+
 ### Bloc event handler
 
 Creates a BLoC event handler that is used with destructured events.
@@ -82,6 +85,7 @@ Stream<$1State> _$2($3) async* {
   $0
 }
 ```
+
 ### Bloc state
 
 Creates a Freezed bloc state.
@@ -96,6 +100,7 @@ Creates a Freezed bloc state.
 const factory $1State.$2($3) = $1State$2;
 $0
 ```
+
 ### Block separator
 
 Comment block separator
@@ -111,6 +116,7 @@ Comment block separator
 
 $0
 ```
+
 ### Class under interface
 
 Creates and interface and a default implementation for it.
@@ -128,6 +134,7 @@ class $1 implements I$1 {
   $0
 }
 ```
+
 ### Conditional imports
 
 Platform-aware conditional imports.
@@ -144,6 +151,7 @@ import '$1/$2_stub.dart'
     if (dart.library.io) '$1/$2_io.dart';
 
 ```
+
 ### Config mixin
 
 Private config mixin used for configuration.
@@ -160,6 +168,7 @@ mixin ${1:_Config} {
   $0
 }
 ```
+
 ### Config mixin entry
 
 Creates a static constant config mixin entry.
@@ -174,6 +183,7 @@ Creates a static constant config mixin entry.
 static const $1 $2 = $3;
 $0
 ```
+
 ### Config mixin spacing entry
 
 Creates a static configuration spacing mixin entry.
@@ -188,6 +198,7 @@ Creates a static configuration spacing mixin entry.
 static const double $1Spacing = $2;
 $0
 ```
+
 ### Default bloc
 
 Creates a scaffold for a StreamBloc that contains states, events, and the BLoC itself.
@@ -227,6 +238,7 @@ class $1Bloc extends StreamBloc<$1Event, $1State> {
   Stream<$1State> mapEventToStates($1Event event) => event$0;
 }
 ```
+
 ### Generated part
 
 Inserts a part statement for generated code.
@@ -242,6 +254,7 @@ part '${TM_FILENAME_BASE}.$1.dart';
 
 $0
 ```
+
 ### Implementation
 
 Creates a default implementation for an interface.
@@ -257,6 +270,7 @@ class $1 implements I$1 {
   $0
 }
 ```
+
 ### Interface
 
 Creates an interface.
@@ -270,6 +284,7 @@ Creates an interface.
 ```dart
 abstract class I$1 {}
 ```
+
 ### New dartdoc template
 
 Creates a new dartdoc template with current file's name as its prefix
@@ -286,6 +301,7 @@ Creates a new dartdoc template with current file's name as its prefix
 /// {@endtemplate}
 $0
 ```
+
 ### Retrofit client
 
 Creates a retrofit client.
@@ -309,6 +325,7 @@ abstract class $2Client {
   $0
 }
 ```
+
 ### Try catch finally
 
 Try-catch-finally block
@@ -328,6 +345,7 @@ try {
   $0
 }
 ```
+
 ### Try catch on
 
 Try-catch on clause
@@ -343,6 +361,7 @@ on $1 catch (e, s) {
   $0
 }
 ```
+
 ### Use dartdoc template
 
 Uses existing dartdoc macro with current file's name as its prefix
@@ -356,6 +375,8 @@ Uses existing dartdoc macro with current file's name as its prefix
 ```dart
 /// {@macro $TM_FILENAME_BASE.$0}
 ```
+
+
 ## Flutter
 
 ### Arrow stateless widget
@@ -379,6 +400,7 @@ class $1 extends StatelessWidget {
 }
 
 ```
+
 ### Arrow stateless widget child
 
 Creates a StatelessWidget that takes a child and uses arrow instead of return.
@@ -401,6 +423,7 @@ class $1 extends StatelessWidget {
 }
 
 ```
+
 ### Auto route nested routes
 
 Creates an entry point for a group of nested Auto Route routes with a void return types.
@@ -420,6 +443,7 @@ const AutoRoute<void> $1Routes = AutoRoute(
   ],
 );
 ```
+
 ### Auto route route
 
 Creates an Auto Routes route entry with a void return type.
@@ -437,6 +461,7 @@ AutoRoute(
 ),
 $0
 ```
+
 ### Auto router call
 
 Locates nearest AutoRouter in the given context and calls an arbitrary navigation method on it.
@@ -450,6 +475,7 @@ Locates nearest AutoRouter in the given context and calls an arbitrary navigatio
 ```dart
 AutoRouter.of(context).$0
 ```
+
 ### Inherited scope
 
 Creates a scope that inherits from the Scope Stateful+Inherited Widget wrapper.
@@ -478,6 +504,7 @@ class _$1ScopeDelegate extends ScopeDelegate<$1Scope> {
 
 }
 ```
+
 ### Stateless bloc scope
 
 Creates a stateless scope for BLoC that uses BlocProvider as its InheritedWidget.
@@ -505,6 +532,7 @@ class $1Scope extends StatelessWidget {
       );
 }
 ```
+
 ### Stateless widget
 
 Creates a regular StatelessWidget.
@@ -528,6 +556,8 @@ class $1 extends StatelessWidget {
 }
 
 ```
+
+
 ## Markdown
 
 ### Initial changelog entry
@@ -551,6 +581,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - $0
 ```
+
 ### New changelog entry
 
 Creates a Changelog entry
@@ -581,3 +612,6 @@ Creates a Changelog entry
 ### Security
 - $0
 ```
+
+
+
