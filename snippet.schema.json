@@ -1,20 +1,23 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "properties": {
-      "prefix": { "$ref": "#/definitions/string-or-array" },
-      "description": { "type": "string" },
-      "body": { "$ref": "#/definitions/string-or-array" }
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "properties": {
+    "prefix": {
+      "type": "string"
     },
-    "required": [
-      "prefix",
-      "description",
-      "body"
-    ],
-    "definitions": {
-     "string-or-array": {
-        "type": ["array", "string"],
-        "items": { "type": "string" }
+    "description": {
+      "type": "string"
+    },
+    "body": {
+      "type": "array",
+      "items": {
+        "type": "string"
       }
     }
+  },
+  "required": [
+    "prefix",
+    "description",
+    "body"
+  ]
 }
