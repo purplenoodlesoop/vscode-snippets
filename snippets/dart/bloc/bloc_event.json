@@ -2,7 +2,7 @@
     "prefix": "blev",
     "description": "Creates a Freezed bloc event.",
     "body": [
-        "const factory $1Event.$2($3) = _$1Event$2;",
+        "const factory $1Event.$2($3) = $1Event$2;",
         "$0"
     ]
 }

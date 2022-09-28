@@ -5,7 +5,7 @@
         "class $1Scope extends StatelessWidget {",
         "  final Widget child;",
         "",
-        "  const $1Scope({Key? key, required this.child,}) : super(key: key);",
+        "  const $1Scope({super.key, required this.child,});",
         "",
         "  static const BlocScope<$1Event, $1State, $1Bloc> _scope = BlocScope();",
         "",
