@@ -66,7 +66,7 @@ Creates a Freezed bloc event.
 #### Body
 
 ```dart
-const factory $1Event.$2($3) = _$1Event$2;
+const factory $1Event.$2($3) = $1Event$2;
 $0
 ```
 
@@ -393,7 +393,7 @@ Creates a StatelessWidget that uses arrow instead of return.
 class $1 extends StatelessWidget {
   $2
 
-  const $1({Key? key,$3}) : super(key: key);
+  const $1({super.key,$3});
 
   @override
   Widget build(BuildContext context) => $0;
@@ -416,7 +416,7 @@ class $1 extends StatelessWidget {
   final Widget child;
   $2
 
-  const $1({Key? key, required this.child, $3}) : super(key: key);
+  const $1({super.key, required this.child, $3});
 
   @override
   Widget build(BuildContext context) => $0;
@@ -489,7 +489,7 @@ Creates a scope that inherits from the Scope Stateful+Inherited Widget wrapper.
 ```dart
 class $1Scope extends Scope {
 
-  const $1Scope({required Widget child, Key? key,}) : super(child: child, key: key);
+  const $1Scope({required super.child, super.key,});
 
   static const DelegateAccess<_$1ScopeDelegate> _delegateOf = Scope.delegateOf<$1Scope, _$1ScopeDelegate>;
 
@@ -519,7 +519,7 @@ Creates a stateless scope for BLoC that uses BlocProvider as its InheritedWidget
 class $1Scope extends StatelessWidget {
   final Widget child;
 
-  const $1Scope({Key? key, required this.child,}) : super(key: key);
+  const $1Scope({super.key, required this.child,});
 
   static const BlocScope<$1Event, $1State, $1Bloc> _scope = BlocScope();
 
@@ -547,7 +547,7 @@ Creates a regular StatelessWidget.
 class $1 extends StatelessWidget {
   $2
 
-  const $1({Key? key,$3}) : super(key: key);
+  const $1({super.key,$3});
 
   @override
   Widget build(BuildContext context) {
