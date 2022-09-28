@@ -6,7 +6,7 @@
         "  final Widget child;",
         "  $2",
         "",
-        "  const $1({Key? key, required this.child, $3}) : super(key: key);",
+        "  const $1({super.key, required this.child, $3});",
         "",
         "  @override",
         "  Widget build(BuildContext context) => $0;",
