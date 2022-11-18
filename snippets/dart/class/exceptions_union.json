@@ -1,0 +1,10 @@
+{
+    "prefix": "exceuni",
+    "description": "Crease a Freezed union of throwable exception",
+    "body": [
+        "@freezed",
+        "class $1Exception with _$1Exception implements Exception {",
+        "  $0",
+        "}"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "prefix": "blsteph",
+    "description": "Creates a set of states with ephemeral value that is present only in a success state.",
+    "body": [
+        "const factory $1State.idle() = $1StateIdle;",
+        "",
+        "const factory $1State.loading() = $1StateLoading;",
+        "",
+        "const factory $1State.success({required $2 $3,}) = $1StateSuccess;",
+        "",
+        "const factory $1State.error({required String description,}) = $1StateError;"
+    ]
+}

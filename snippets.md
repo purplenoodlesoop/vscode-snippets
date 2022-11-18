@@ -9,6 +9,8 @@ This file is auto-generated
 	- [Bloc event](#bloc-event)
 	- [Bloc event handler](#bloc-event-handler)
 	- [Bloc state](#bloc-state)
+	- [Bloc states ephemeral](#bloc-states-ephemeral)
+	- [Bloc states persistent](#bloc-states-persistent)
 	- [Block separator](#block-separator)
 	- [Class under interface](#class-under-interface)
 	- [Conditional imports](#conditional-imports)
@@ -16,6 +18,8 @@ This file is auto-generated
 	- [Config mixin entry](#config-mixin-entry)
 	- [Config mixin spacing entry](#config-mixin-spacing-entry)
 	- [Default bloc](#default-bloc)
+	- [Exceptions union](#exceptions-union)
+	- [Freezed json serializable generic class](#freezed-json-serializable-generic-class)
 	- [Generated part](#generated-part)
 	- [Implementation](#implementation)
 	- [Interface](#interface)
@@ -99,6 +103,46 @@ Creates a Freezed bloc state.
 ```dart
 const factory $1State.$2($3) = $1State$2;
 $0
+```
+
+### Bloc states ephemeral
+
+Creates a set of states with ephemeral value that is present only in a success state.
+
+#### Prefix
+
+`blsteph`
+
+#### Body
+
+```dart
+const factory $1State.idle() = $1StateIdle;
+
+const factory $1State.loading() = $1StateLoading;
+
+const factory $1State.success({required $2 $3,}) = $1StateSuccess;
+
+const factory $1State.error({required String description,}) = $1StateError;
+```
+
+### Bloc states persistent
+
+Creates a set of states with persistent value that is present across all states.
+
+#### Prefix
+
+`blstpers`
+
+#### Body
+
+```dart
+const factory $1State.idle({required $1Data? data,}) = $1StateIdle;
+
+const factory $1State.loading({required $1Data? data,}) = $1StateLoading;
+
+const factory $1State.success({required $1Data data,}) = $1StateSuccess;
+
+const factory $1State.error({required $1Data? data, required String description,}) = $1StateError;
 ```
 
 ### Block separator
@@ -236,6 +280,45 @@ class $1Bloc extends StreamBloc<$1Event, $1State> {
 
   @override
   Stream<$1State> mapEventToStates($1Event event) => event$0;
+}
+```
+
+### Exceptions union
+
+Crease a Freezed union of throwable exception
+
+#### Prefix
+
+`exceuni`
+
+#### Body
+
+```dart
+@freezed
+class $1Exception with _$1Exception implements Exception {
+  $0
+}
+```
+
+### Freezed json serializable generic class
+
+Creates a freezed + json_serializable class that uses generic factories
+
+#### Prefix
+
+`fjsongenclass`
+
+#### Body
+
+```dart
+@freezed
+@JsonSerializable(genericArgumentFactories: true)
+class $1<T$2> with _$$1<T> {
+  const factory $1({$0,}) = _$1;
+
+  factory $1.fromJson(Map<String, Object?> json, T Function(Object?) fromJsonT,) {
+    return _$$1FromJson<T>(json, fromJsonT);
+  }
 }
 ```
 

@@ -1,0 +1,13 @@
+{
+    "prefix": "blstpers",
+    "description": "Creates a set of states with persistent value that is present across all states.",
+    "body": [
+        "const factory $1State.idle({required $1Data? data,}) = $1StateIdle;",
+        "",
+        "const factory $1State.loading({required $1Data? data,}) = $1StateLoading;",
+        "",
+        "const factory $1State.success({required $1Data data,}) = $1StateSuccess;",
+        "",
+        "const factory $1State.error({required $1Data? data, required String description,}) = $1StateError;"
+    ]
+}
