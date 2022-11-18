@@ -1,0 +1,15 @@
+{
+    "prefix": "fjsongenclass",
+    "description": "Creates a freezed + json_serializable class that uses generic factories",
+    "body": [
+        "@freezed",
+        "@JsonSerializable(genericArgumentFactories: true)",
+        "class $1<T$2> with _$$1<T> {",
+        "  const factory $1({$0,}) = _$1;",
+        "",
+        "  factory $1.fromJson(Map<String, Object?> json, T Function(Object?) fromJsonT,) {",
+        "    return _$$1FromJson<T>(json, fromJsonT);",
+        "  }",
+        "}"
+    ]
+}
